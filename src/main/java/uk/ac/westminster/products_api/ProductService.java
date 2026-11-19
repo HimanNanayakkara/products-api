@@ -11,9 +11,9 @@ public class ProductService {
     private List<Product> products=new ArrayList<>();
     private Long nextId=1L;
     public ProductService() {
-        products.add(new DigitalProduct(1L,"Windows 10",10.99,"www.micrisoft.com/windows10",20000));
+        products.add(new DigitalProduct(nextId++,"Windows 10",10.99,"www.micrisoft.com/windows10",20000));
 
-        products.add(new PhysicalProduct(2L, "Gaming Laptop", 1299.99, 2.5, "35 x 25 x 2 cm"));
+        products.add(new PhysicalProduct(nextId++, "Gaming Laptop", 1299.99, 2.5, "35 x 25 x 2 cm"));
 
         nextId = 3L;
     }
