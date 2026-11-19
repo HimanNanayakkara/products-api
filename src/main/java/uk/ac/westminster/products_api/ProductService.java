@@ -10,6 +10,13 @@ import java.util.Optional;
 public class ProductService {
     private List<Product> products=new ArrayList<>();
     private Long nextId=1L;
+    public ProductService() {
+        products.add(new DigitalProduct(1L,"Windows 10",10.99,"www.micrisoft.com/windows10",20000));
+
+        products.add(new PhysicalProduct(2L, "Gaming Laptop", 1299.99, 2.5, "35 x 25 x 2 cm"));
+
+        nextId = 3L;
+    }
 
     public List<Product> getAllProducts() {
         return products;
@@ -29,4 +36,5 @@ public class ProductService {
     public List<Product> findByName(String name) {
         return products.stream().filter(p->p.getName().contains(name)).toList();
     }
+
 }
